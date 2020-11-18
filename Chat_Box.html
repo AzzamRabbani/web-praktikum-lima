@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckBox</title>
+    <style>
+        body{
+            background-color: rgb(71, 221, 96);
+        }
+
+        .result-chat {
+            height: 300px;
+            width: 300px;
+            background-color: rgb(36, 39, 39);
+            color: rgb(255, 255, 255);
+            overflow: scroll;
+            border: 1px solid rgb(238, 232, 226);    
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="result-chat"></div>
+        <div>
+            <input type="text" class="input-chat" size="42">
+            <button class="btn-chat">Kirim</button>
+        </div>
+    </main>
+
+    <script>
+        let resultChat = document.querySelector(".result-chat");
+        const inputChat = document.querySelector(".input-chat");
+        const btnChat = document.querySelector(".btn-chat");
+
+        btnChat.addEventListener("click", function() {
+            resultChat.innerHTML = resultChat.innerHTML + "<br>" + "You :" + inputChat.value;
+            inputChat.value = "";
+        })
+    </script>
+</body>
+</html>
